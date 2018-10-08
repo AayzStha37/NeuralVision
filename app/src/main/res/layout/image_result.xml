@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mybg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_bg_anim"
+    tools:context="com.example.aayzstha.neuralvision.MainActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="116dp"
+        >
+
+        <ImageView
+            android:layout_width="118dp"
+            android:layout_height="3dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/done_side_bar" />
+
+        <cdflynn.android.library.checkview.CheckView
+            android:id="@+id/check"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:checkView_strokeColor="#FFFFFF"
+            app:checkView_strokeWidth="3dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="118dp"
+            android:layout_height="3dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/done_side_bar" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="329dp"
+        android:layout_height="424dp"
+        android:layout_below="@+id/relativeLayout4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/result_box">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/nexab"
+            android:paddingLeft="24dp"
+            android:text="Following objects were detected : "
+            android:textColor="#ffffff"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/result"
+            android:fontFamily="@font/nexab"
+            android:textSize="20dp"
+            android:paddingTop="5dp"
+            android:paddingLeft="24dp"
+            android:textColor="#ffffff"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/shutter_circ"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="38dp"
+            android:layout_height="32dp"
+            android:id="@+id/back"
+            android:background="@drawable/back_arrow" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

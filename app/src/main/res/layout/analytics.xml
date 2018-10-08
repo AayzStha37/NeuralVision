@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mybg"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/my_bg_anim">
+
+    <RelativeLayout
+        android:id="@+id/rv1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/back_btn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/back_arrow" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="135dp"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="46dp"
+            android:background="@drawable/lock_circ"
+            android:fontFamily="@font/nexab"
+            android:gravity="center"
+            android:text="MONTHLY"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="375dp"
+        android:layout_height="300dp"
+        android:layout_below="@+id/rv1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/recte3">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/graph"
+            android:layout_width="350dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="90dp">
+
+        </com.github.mikephil.charting.charts.LineChart>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ana"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="16dp"
+        android:fontFamily="@font/nexa_l"
+        android:gravity="center"
+        android:text="Analytics"
+        android:textColor="#ffffff"
+        android:textSize="30dp" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout5"
+        android:layout_width="375dp"
+        android:layout_height="290dp"
+        android:layout_alignStart="@+id/relativeLayout"
+        android:layout_below="@+id/ana"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/recte3"
+        android:paddingBottom="5dp">
+
+        <RelativeLayout
+            android:id="@+id/label3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp">
+
+            <TextView
+                android:id="@+id/tv_obj_det"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/nexab"
+                android:textColor="#000"
+                android:textSize="28dp" />
+
+
+            <TextView
+                android:id="@+id/tv_obj_rec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/nexab"
+                android:textColor="#000"
+                android:textSize="28dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/label4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label3"
+            android:layout_marginTop="4dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/nexab"
+                android:text="Objects Detected"
+                android:textColor="#2E4A18"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:fontFamily="@font/nexab"
+                android:text="Objects Recognised"
+                android:textColor="#E52929"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/filter"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_above="@+id/textView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/trans">
+
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/filter_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                app:cpb_background_progressbar_color="@color/progressbarbg"
+                app:cpb_background_progressbar_width="2dp"
+                app:cpb_progressbar_color="@color/progressbarfg"
+                app:cpb_progressbar_width="5dp" />
+
+            <TextView
+                android:id="@+id/accuracy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="28dp"
+                android:fontFamily="@font/nexab"
+                android:textColor="#000"
+                android:textSize="35dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="70dp"
+                android:fontFamily="@font/nexab"
+                android:text="  %"
+                android:textColor="#000000"
+                android:textSize="30dp" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/nexab"
+            android:text="Filter Accuracy"
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
