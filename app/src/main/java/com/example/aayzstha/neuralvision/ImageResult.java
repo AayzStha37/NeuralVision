@@ -30,6 +30,7 @@ public class ImageResult extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MainActivity.count++;
         setContentView(R.layout.image_result);
         myly = findViewById(R.id.mybg);
         mCheckView=findViewById(R.id.check);
@@ -44,13 +45,12 @@ public class ImageResult extends Activity {
         result=findViewById(R.id.result);
 
         String response= getIntent().getStringExtra("RES");
-        result.setText(response);
-        //Speakerbox speakerbox = new Speakerbox(getApplication());
-        //speakerbox.play(response);
+        result.setText(response.replaceAll(System.getProperty("line.separator"), ""));
+        Speakerbox speakerbox = new Speakerbox(getApplication());
+        speakerbox.play("There is a " + response + " in front of you");
         //demo voice
-        Speakerbox speakerbox2  = new Speakerbox(getApplication());
-        speakerbox2.play("there is a dog in front of you");
-
+       /* Speakerbox speakerbox2  = new Speakerbox(getApplication());
+        speakerbox2.play("there is a dog in front of you");*/
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

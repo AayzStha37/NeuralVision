@@ -49,8 +49,10 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -64,6 +66,7 @@ public class ImageCapture extends Activity {
     RelativeLayout rlUp;
     ProgressBar progressBar;
     ProgressBar progressBar2;
+    String number;
     //EditText url;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -131,7 +134,6 @@ public class ImageCapture extends Activity {
                 startActivity(i);
             }
         });
-
     }
     public Bitmap roundCornerImage(Bitmap raw, float round) {
         int width = raw.getWidth();
@@ -154,6 +156,7 @@ public class ImageCapture extends Activity {
 
         return result;
     }
+
    private void sendPhoto(Bitmap bitmap) throws Exception {
         new UploadTask().execute(bitmap);
     }
@@ -177,7 +180,7 @@ public class ImageCapture extends Activity {
 
             DefaultHttpClient httpclient = new DefaultHttpClient();
             try {
-                HttpPost httppost = new HttpPost("10.42.0.1"); // server
+                HttpPost httppost = new HttpPost("http://192.168.43.33:5000/predict"); // server
 
                 StringEntity se;
                 se = new StringEntity(jsonObject.toString());
@@ -196,24 +199,37 @@ public class ImageCapture extends Activity {
                 try {
                     if (response != null){
 
-                        Intent i = new Intent(ImageCapture.this, ImageResult.class);
-                        i.putExtra("RES", response.getStatusLine().toString());
-                        startActivity(i);
-                        //Log.i("TAG", "response " + response.getStatusLine().toString());
+                        String result = response.getStatusLine().toString();
+
                     }
 
+                    String result="";
+                    try {
+                        BufferedReader rd = new BufferedReader(new InputStreamReader(
+                                response.getEntity().getContent()));
+                        String line = "";
+                        while ((line = rd.readLine()) != null) {
+                            result = result + line;
+                        }
+                        Log.i("msgr", result);
+                        number=result;
+                        Intent i = new Intent(ImageCapture.this, ImageResult.class);
+                        i.putExtra("RES", number);
+                        startActivity(i);
 
 
+                    } catch (Exception e) {
+                        number = "error";
+                    }
                 } finally {
 
                 }
+
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             } finally {
 
             }
-
-
 
             return null;
         }
