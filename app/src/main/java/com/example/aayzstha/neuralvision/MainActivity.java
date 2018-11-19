@@ -67,7 +67,8 @@ public class MainActivity extends Activity {
         enableButton.setOnStateChangeListener(new OnStateChangeListener() {
             @Override
             public void onStateChange(boolean active) {
-                Toast.makeText(MainActivity.this, "Device dis-connected!", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(MainActivity.this, "Device dis-connected!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this,BTconfig.class));
             }
         });
 

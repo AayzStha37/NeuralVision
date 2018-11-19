@@ -21,10 +21,6 @@ import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 import java.util.ArrayList;
 
-/**
- * Created by Aayz Stha on 9/29/2018.
- */
-
 public class Aanlytics extends Activity {
     private LineChart mChart;
     RelativeLayout myly;

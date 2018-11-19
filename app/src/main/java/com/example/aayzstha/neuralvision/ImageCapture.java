@@ -63,10 +63,10 @@ public class ImageCapture extends Activity {
     RelativeLayout myly;
     AnimationDrawable animDraw;
     RelativeLayout dBox;
-    RelativeLayout rlUp;
     ProgressBar progressBar;
     ProgressBar progressBar2;
     String number;
+    RelativeLayout rlUp;
     //EditText url;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -169,8 +169,6 @@ public class ImageCapture extends Activity {
 
 
             String ImageString=encodeImage(bitmaps[0]);
-
-
             JSONObject jsonObject=new JSONObject();
             try {
                 jsonObject.put("image",ImageString);
@@ -181,13 +179,10 @@ public class ImageCapture extends Activity {
             DefaultHttpClient httpclient = new DefaultHttpClient();
             try {
                 HttpPost httppost = new HttpPost("http://192.168.43.33:5000/predict"); // server
-
                 StringEntity se;
                 se = new StringEntity(jsonObject.toString());
                 httppost.setEntity(se);
-
                 httppost.setHeader("Content-type", "application/json");
-
                 HttpResponse response = null;
 
                 try {
